@@ -5,7 +5,6 @@ CREATE TABLE CLIENTE (
     Telefone VARCHAR(20),
     Endereco VARCHAR(500),
     Data_Cadastro DATE NOT NULL,
-    Senha_Hash VARCHAR(255)
 );
 
 
