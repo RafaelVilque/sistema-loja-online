@@ -11,6 +11,18 @@ O projeto implementa um pequeno sistema de loja online para fins didáticos. Per
 - Criar e listar pedidos e itens de pedido.
 - Gerar relatórios simples.
 
+## Integrantes
+
+Desenvolvido por:
+
+- Kaynan de Oliveira Barbosa
+- Rafael Covre Vilque
+- Ricardo Cardeais
+- Renato Oliveira de Jesus
+- Yuri Gabriel Amorim dos Santos
+
+<!-- Os nomes acima foram extraídos de `src/main.py` -->
+
 O foco é demonstrar organização de código, acesso a banco de dados e separação entre camadas (controllers, models, utils).
 
 ## Requisitos
@@ -113,4 +125,4 @@ Este repositório não contém uma licença explícita. Adicione um arquivo LICE
 
 ## Contato
 
-Para dúvidas ou sugestões, abra uma issue no repositório.
+Para dúvidas ou sugestões, abra uma issue no repositório..
