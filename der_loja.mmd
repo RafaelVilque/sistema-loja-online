@@ -1,0 +1,46 @@
+
+erDiagram
+    CLIENTE {
+        INTEGER ID_Cliente PK "Chave primária"
+        VARCHAR Nome_Cliente "Nome completo do cliente"
+        VARCHAR Email "Email único"
+        VARCHAR Telefone "Telefone com DDD"
+        VARCHAR Endereco "Endereço completo"
+        DATE Data_Cadastro "Data em que o cliente foi cadastrado"
+    }
+
+    PRODUTO {
+        INTEGER ID_Produto PK "Chave primária"
+        VARCHAR Nome_Produto "Nome do produto"
+        TEXT Descricao "Descrição do produto"
+        DECIMAL Preco "Preço unitário"
+        INT Estoque "Quantidade disponível"
+        VARCHAR Categoria "Categoria do produto"
+        DATE Data_Cadastro "Data de cadastro"
+        VARCHAR Status_Produto "Status (ativo, inativo, etc.)"
+        VARCHAR URL_Imagem "Link da imagem"
+    }
+
+    PEDIDO {
+        INTEGER ID_Pedido PK "Chave primária"
+        INT ID_Cliente FK "Chave estrangeira -> CLIENTE"
+        DATE Data_Pedido "Data do pedido"
+        VARCHAR Status_Pedido "Status (Em aberto, Pago, etc.)"
+        DECIMAL Valor_Total "Valor total do pedido"
+        VARCHAR Forma_Pagamento "Forma de pagamento"
+        VARCHAR Endereco_Entrega "Endereço de entrega"
+    }
+
+    ITENS_PEDIDO {
+        INTEGER ID_Item PK "Chave primária"
+        INT ID_Pedido FK "Chave estrangeira -> PEDIDO"
+        INT ID_Produto FK "Chave estrangeira -> PRODUTO"
+        INT Quantidade "Quantidade comprada"
+        DECIMAL Preco_Unitario "Preço do produto no momento da compra"
+        DECIMAL Subtotal "Subtotal = Quantidade * Preço_Unitario"
+    }
+
+    %% Relacionamentos
+    CLIENTE ||--o{ PEDIDO : "realiza"
+    PEDIDO ||--o{ ITENS_PEDIDO : "possui"
+    PRODUTO ||--o{ ITENS_PEDIDO : "é vendido em"
